@@ -1,0 +1,21 @@
+name: "Sum Calculator"
+description: "Calculate the sum of two numbers"
+inputs:
+  sum1:
+    description: "1st num"
+    required: true
+    default: 0
+  sum2:
+    description: "2nd num"
+    required: true
+    default: 0
+outputs:
+  result:
+    description: "the sum of sum1 and sum2"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{inputs.sum1}}
+    - ${{inputs.sum2}}

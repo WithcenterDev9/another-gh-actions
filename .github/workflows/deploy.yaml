@@ -1,0 +1,21 @@
+name: "My workflow"
+
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on:
+      - ubuntu-latest
+    steps:
+      - name: Hello
+        run: echo "Hello this is my custom action using docker container actions"
+      - name: Run docker action to calculate sum
+        uses: ./
+        with:
+          sum1: 10
+          sum2: 20
+        
