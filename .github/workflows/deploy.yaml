@@ -1,6 +1,5 @@
 name: "My workflow"
 
-
 on:
   push:
     branches:
@@ -13,9 +12,10 @@ jobs:
     steps:
       - name: Hello
         run: echo "Hello this is my custom action using docker container actions"
+      - name: Checkout code
+        run: actions/checkout@v4
       - name: Run docker action to calculate sum
         uses: ./
         with:
           sum1: 10
           sum2: 20
-        
